@@ -121,7 +121,11 @@ Para instalar o virtualbox acesse https://www.virtualbox.org/wiki/Downloads e es
 Este arquivo detalha os passos de instalação do pfsense e alternativamente uma imagem pronta para o virtualbox [Instalacao_PFSense.pdf](https://github.com/user-attachments/files/26728713/Instalacao_PFSense.pdf)
 
 ### 2.3. Trocar no Virtualbox para que a interface 2 do pfSense seja a tap0 no modo bridge
-![Configuração da interface de clientes como Bridge](diagramas/images/pfsense_bridge2.png)
+<img width="766" height="118" alt="image" src="https://github.com/user-attachments/assets/7bed4431-7336-4f71-9c0c-b453cc7178b2" />
+
+
+ <img width="950" height="375" alt="pfsense_bridge2" src="https://github.com/user-attachments/assets/2488ce95-7a8d-4d64-a0d5-8d959970561a" />
+
 
  
 
