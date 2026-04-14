@@ -110,7 +110,7 @@ pip  install  -r  requirements.txt
 
 # Esse script criara uma interface virtual tap0 que sera utilizada na configuração do pfsense
 
-configurar_rede.sh
+./configurar_rede.sh
 
 ```
 
