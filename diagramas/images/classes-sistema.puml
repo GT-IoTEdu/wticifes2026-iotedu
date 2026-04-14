@@ -1,0 +1,200 @@
+@startuml classes-sistema-iot-edu
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+title IoT-EDU — Diagrama de classes (domínio e persistência)\nSQLAlchemy / backend
+
+package "Enums (db.enums)" <<Rectangle>> {
+  enum UserPermission {
+    USER
+    ADMIN
+    SUPERUSER
+  }
+  enum IncidentSeverity {
+    LOW
+    MEDIUM
+    HIGH
+    CRITICAL
+  }
+  enum IncidentStatus {
+    NEW
+    INVESTIGATING
+    RESOLVED
+    FALSE_POSITIVE
+    ESCALATED
+  }
+  enum ZeekLogType {
+    "http.log"
+    "dns.log"
+    "conn.log"
+    "ssl.log"
+    "files.log"
+    "weird.log"
+    "notice.log"
+  }
+  enum FeedbackStatus {
+    PENDING
+    REVIEWED
+    ACTION_REQUIRED
+  }
+}
+
+package "Entidades (db.models)" <<Rectangle>> {
+
+  class Institution {
+    +id : int <<PK>>
+    +nome : str
+    +cidade : str
+    +pfsense_base_url / pfsense_key
+    +zeek_base_url / zeek_key
+    +suricata_base_url / suricata_key
+    +snort_base_url / snort_key
+    +ip_range_start / ip_range_end
+    +is_active : bool
+  }
+
+  class User {
+    +id : int <<PK>>
+    +email : str <<unique>>
+    +nome : str
+    +instituicao : str
+    +institution_id : int <<FK>>
+    +permission : UserPermission
+    +is_active : bool
+    +ultimo_login : datetime
+  }
+
+  class DhcpServer {
+    +id : int <<PK>>
+    +server_id : str
+    +interface : str
+    +range_from / range_to
+  }
+
+  class DhcpStaticMapping {
+    +id : int <<PK>>
+    +server_id : int <<FK>>
+    +pf_id : int
+    +mac / ipaddr
+    +institution_id : int <<FK>>
+    +is_blocked : bool
+  }
+
+  class UserDeviceAssignment {
+    +id : int <<PK>>
+    +user_id : int <<FK>>
+    +device_id : int <<FK>>
+    +assigned_by : int <<FK?>>
+    +is_active : bool
+  }
+
+  class PfSenseAlias {
+    +id : int <<PK>>
+    +pf_id : int
+    +name : str
+    +institution_id : int <<FK>>
+  }
+
+  class PfSenseAliasAddress {
+    +id : int <<PK>>
+    +alias_id : int <<FK>>
+    +address / detail
+  }
+
+  class PfSenseFirewallRule {
+    +id : int <<PK>>
+    +pf_id : int
+    +institution_id : int <<FK>>
+    +interface / protocol / source / destination
+  }
+
+  class Incident {
+    +id : int <<PK>>
+    +device_ip / device_name
+    +severity : IncidentSeverity
+    +status : IncidentStatus
+    +zeek_log_type : ZeekLogType
+    +assigned_to : int <<FK?>>
+  }
+
+  class SuricataAlert {
+    +id : int <<PK>>
+    +institution_id : int <<FK>>
+    +detected_at
+    +signature / severity
+    +src_ip / dest_ip
+    +processed_at
+  }
+
+  class SnortAlert {
+    +id : int <<PK>>
+    +institution_id : int <<FK>>
+    +detected_at
+    +signature / severity
+    +processed_at
+  }
+
+  class ZeekAlert {
+    +id : int <<PK>>
+    +institution_id : int <<FK>>
+    +detected_at
+    +signature / severity
+    +processed_at
+  }
+
+  class BlockingFeedbackHistory {
+    +id : int <<PK>>
+    +dhcp_mapping_id : int <<FK>>
+    +status : FeedbackStatus
+    +problem_resolved : bool?
+  }
+}
+
+' --- Associações principais ---
+Institution "1" <-- "0..*" User : institution_id
+Institution "1" <-- "0..*" DhcpStaticMapping
+Institution "1" <-- "0..*" PfSenseAlias
+Institution "1" <-- "0..*" PfSenseFirewallRule
+Institution "1" <-- "0..*" SuricataAlert
+Institution "1" <-- "0..*" SnortAlert
+Institution "1" <-- "0..*" ZeekAlert
+
+DhcpServer "1" *-- "0..*" DhcpStaticMapping : server_id
+
+User "1" *-- "0..*" UserDeviceAssignment : user_id
+DhcpStaticMapping "1" *-- "0..*" UserDeviceAssignment : device_id
+User "0..1" ..> UserDeviceAssignment : assigned_by
+
+PfSenseAlias "1" *-- "0..*" PfSenseAliasAddress
+
+User "0..1" <-- "0..*" Incident : assigned_to
+
+DhcpStaticMapping "1" *-- "0..*" BlockingFeedbackHistory
+
+' --- Uso de enums nas colunas ---
+User ..> UserPermission : <<uses>>
+Incident ..> IncidentSeverity
+Incident ..> IncidentStatus
+Incident ..> ZeekLogType
+SuricataAlert ..> IncidentSeverity
+SnortAlert ..> IncidentSeverity
+ZeekAlert ..> IncidentSeverity
+BlockingFeedbackHistory ..> FeedbackStatus
+
+note bottom of Institution
+  **Multi-institutionalidade:** credenciais pfSense / Zeek /
+  Suricata / Snort e range de IPs por campus.
+end note
+
+note bottom of SuricataAlert
+  Alertas persistidos após consumo SSE
+  (ids-log-monitor → backend). Estrutura análoga em
+  SnortAlert e ZeekAlert.
+end note
+
+note right of UserDeviceAssignment
+  Associação **N:N** resolvida com tabela própria
+  (user ↔ dispositivo DHCP).
+end note
+
+@enduml
