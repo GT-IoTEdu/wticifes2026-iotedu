@@ -123,282 +123,40 @@ Este arquivo detalha os passos de instalação do pfsense e alternativamente uma
 ### 2.3. Trocar no Virtualbox para que a interface 2 do pfSense seja a tap0 no modo bridge
 <img width="766" height="118" alt="image" src="https://github.com/user-attachments/assets/7bed4431-7336-4f71-9c0c-b453cc7178b2" />
 
+ 
 
  <img width="950" height="375" alt="pfsense_bridge2" src="https://github.com/user-attachments/assets/2488ce95-7a8d-4d64-a0d5-8d959970561a" />
 
+### 2.4. Garanta que a interface 1 esteja na sua interface da placa de rede
+ <img width="1013" height="368" alt="image" src="https://github.com/user-attachments/assets/d1d17a16-1c21-41fd-bca9-5fbacc65218c" />
+
+
+### 2.5. Na máquina do pfsense selecione a segunda opção, então 1 e responda sim para todas as perguntas
+<img width="512" height="444" alt="image" src="https://github.com/user-attachments/assets/87b06d0f-efbd-41fb-8936-90b3e480c7cb" />
+Como resultado a wan tera um endereço ip que pode ser acessado no seu navegador, uma vez lá navegue até a interface LAN
+
+<img width="1017" height="626" alt="image" src="https://github.com/user-attachments/assets/9fb26554-1baf-47be-9d56-60eb0d2e1420" />
+
+### 2.6. Atribua um ip estatico ipv4 para a LAN
+
+<img width="1017" height="211" alt="image" src="https://github.com/user-attachments/assets/ce3f9d21-787a-4581-9c8e-1fb93439b43c" />
+
+<img width="935" height="228" alt="image" src="https://github.com/user-attachments/assets/67877420-ddff-4504-9829-3eeedc7b9e3e" />
+O ip escolhido é um exemplo 
+
+### 2.7. Ative o servidor dhcp da LAN
+<img width="999" height="640" alt="image" src="https://github.com/user-attachments/assets/b4e9dd3f-3bc2-4c0e-8c52-32bbd0e03396" />
+
+<img width="999" height="640" alt="image" src="https://github.com/user-attachments/assets/44494820-1bb8-45b9-8cda-3fcafca70c95" />
+
+<img width="940" height="276" alt="image" src="https://github.com/user-attachments/assets/2c128d34-e6e2-4162-ab50-f21ea5e7af85" />
 
  
 
   
 
-**Verificar:**
-
-```sql
-
-USE iot_edu;
-
-SHOW TABLES;
-
-```
-
-  
-
-Deve mostrar todas as tabelas criadas:
-
-- users
-
-- institutions
-
-- dhcp_servers
-
-- dhcp_static_mappings
-
-- pfsense_aliases
-
-- pfsense_alias_addresses
-
-- pfsense_firewall_rules
-
-- zeek_incidents
-
-- etc.
-
-  
-
-## 🛡️ Passo 3: Configurar pfSense
-
-  
-
-### 5.1. Habilitar API REST no pfSense
-
-  
-
-1. Acesse a interface web do pfSense
-
-2. Vá em **System > Package Manager**
-
-3. Instale o pacote **API** (pfsense-pkg-API)
-
-4. Vá em **System > API**
-
-5. Gere uma nova chave de API (SHA256 tamanho 36)
-
-6. Anote a **API Key**
-
-  
-  
-
-## 🚀 Passo 4: Criar Aliases e Regras Iniciais
-**Importante:** O script `setup_initial_aliases_and_rules.py` precisa ser executado **após** criar a instituição (PASSO 5), pois ele cria os aliases e regras para cada instituição cadastrada.
-  
-
-```bash
-
-# Para todas as instituições
-
-python  scripts/setup_initial_aliases_and_rules.py
-
-  
-
-```
-
-  
-
-**O que este script faz:**
-
-1. ✅ Cria alias "Autorizados" no pfSense e banco
-
-2. ✅ Cria alias "Bloqueados" no pfSense e banco
-
-3. ✅ Cria regra BLOCK para alias "Bloqueados"
-
-4. ✅ Cria regra PASS para alias "Autorizados"
-
-5. ✅ Sincroniza regras com o banco de dados
-
-  
-
-**Nota:** Este script requer que a instituição já esteja cadastrada no banco de dados. Se ainda não criou a instituição, veja o Passo 5.
-
-  
-
-## 👥 Passo 5: Criar Instituição e Administrador via Interface Web
-
-  
-
-Após executar os scripts acima, você precisa:
-
-  
-
-1.  **Iniciar o servidor backend:**
-
-```bash
-
-python start_server.py
-
-```
-
-  
-
-2.  **Acessar a interface web** e fazer login com o email configurado em `SUPERUSER_ACCESS` no arquivo `.env`
-
-  
-
-3.  **Criar Instituição:**
-
-- Acesse a seção de **Instituições** na interface web
-
-- Clique em **Nova Instituição**
-
-- Preencha os dados:
-
-- Nome (ex: "Unipampa")
-
-- Cidade (ex: "Alegrete")
-
-- URL do pfSense (ex: "https://seu-pfsense.local/api/v2/")
-
-- Chave API do pfSense
-
-- Range de IPs (ex: "192.168.1.1" a "192.168.1.254")
-
-- Salve a instituição
-
-  
-
-4.  **Criar Usuário Administrador:**
-
-- Acesse a seção de **Usuários** na interface web
-
-- Clique em **Novo Usuário** ou atribua permissão ADMIN a um usuário existente
-
-- Associe o usuário à instituição criada
-
-- Defina a permissão como **ADMIN**
-
-  
-
-**Importante:** O script `setup_initial_aliases_and_rules.py` precisa ser executado **após** criar a instituição, pois ele cria os aliases e regras para cada instituição cadastrada.
-
-  
-  
-
-## 📝 Checklist de Instalação
-
-  
-
-Use este checklist para garantir que tudo foi configurado:
-
-  
-
-- [ ] Banco de dados criado e vazio
-
-- [ ] Variáveis de ambiente configuradas (.env)
-
-- [ ] Dependências Python instaladas
-
-- [ ] Banco de dados configurado (`python -m db.setup_database`)
-
-- [ ] pfSense API configurada e testada
-
-- [ ] Servidor backend iniciado
-
-- [ ] Login realizado como SUPERUSER
-
-- [ ] Instituição criada via interface web
-
-- [ ] Usuário ADMIN criado/atribuído via interface web
-
-- [ ] Script de setup inicial executado (`python scripts/setup_initial_aliases_and_rules.py`)
-
-- [ ] Aliases verificados no banco
-
-- [ ] Aliases verificados no pfSense
-
-- [ ] Regras verificadas no banco
-
-- [ ] Regras verificadas no pfSense
-
-  
-
-## 🐛 Troubleshooting
-
-  
-
-### Erro: "Configurações do pfSense não encontradas"
-
-  
-
-**Solução:**
-
-1. Verificar se a instituição foi criada no banco
-
-2. Verificar se `pfsense_base_url` e `pfsense_key` estão corretos
-
-3. Verificar se o usuário tem `institution_id` associado
-
-  
-
-### Erro: "Timeout ao conectar no pfSense"
-
-  
-
-**Solução:**
-
-1. Verificar conectividade de rede
-
-2. Verificar URL do pfSense (deve terminar com `/api/v2/`)
-
-3. Verificar se API está habilitada no pfSense
-
-
  
 
-### Erro: "Usuário ADMIN não encontrado"
-
   
-
-**Solução:**
-
-1. Criar usuário ADMIN via interface web:
-
-- Acesse a seção de Usuários
-
-- Atribua permissão ADMIN ao usuário
-
-  
-
-2. Ou criar manualmente via SQL:
-
-```sql
-
-UPDATE users SET permission = 'ADMIN', institution_id = 1  WHERE id = X;
-
-```
-
-  
-
-## 📚 Resumo da Instalação
-
-  
-
-O processo de instalação foi simplificado para apenas **2 comandos principais**:
-
-  
-
-1.  **Criar tabelas:**  `python -m db.setup_database`
-
-2. **Instalar pfsense:** mais detalhes em [pfsense install]()
-
-3.  **Criar aliases e regras:**  `python scripts/setup_initial_aliases_and_rules.py`
-
-  
-
-**Após executar os comandos:**
-
-- Criar instituição via interface web (como SUPERUSER)
-
-- Criar/atribuir usuário ADMIN via interface web
-
 
  
