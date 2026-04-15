@@ -266,6 +266,7 @@ deploy_atacante-alvo.sh
 docker exec -it atacante ping 8.8.8.8
 ```
 tente desbloquear o dispositivo enquanto o comando está rodando
+<img width="539" height="198" alt="image" src="https://github.com/user-attachments/assets/75f31b2c-d866-4e5d-b33a-5c6c629327a8" />
 
 
 ## Licença
