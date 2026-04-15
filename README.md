@@ -184,6 +184,8 @@ Este arquivo detalha os passos de instalação do pfsense e alternativamente uma
 [imagem pronta](https://drive.google.com/file/d/1Q9IO_MZtKf6JvTIgJVl-p2nDt5d_ohEj/view?usp=sharing)  
 Caso selecione a imagem pronta siga apenas o passo 2.4 e 2.6.
 
+Para exportar o arquivo OVA vá em arquivos->importar appliance e selecione o arquivo OVA.
+
 ### 2.3. Trocar no Virtualbox para que a interface 2 do pfSense seja a tap0 no modo bridge
 <img width="766" height="118" alt="image" src="https://github.com/user-attachments/assets/7bed4431-7336-4f71-9c0c-b453cc7178b2" />
 
@@ -191,11 +193,11 @@ Caso selecione a imagem pronta siga apenas o passo 2.4 e 2.6.
 
  <img width="950" height="375" alt="pfsense_bridge2" src="https://github.com/user-attachments/assets/2488ce95-7a8d-4d64-a0d5-8d959970561a" />
 
-### 2.4. Garanta que a interface 1 esteja na sua interface da placa de rede
+### 2.4. No mesmo menu garanta que a interface 1 esteja na sua interface da placa de rede
  <img width="1013" height="368" alt="image" src="https://github.com/user-attachments/assets/d1d17a16-1c21-41fd-bca9-5fbacc65218c" />
 
 
-### 2.5. Na máquina do pfsense selecione a segunda opção, então 1 e responda sim para todas as perguntas
+### 2.5. Inicie a VM do pfsense, e ao segunda opção, então 1 e responda sim para todas as perguntas
 <img width="512" height="444" alt="image" src="https://github.com/user-attachments/assets/87b06d0f-efbd-41fb-8936-90b3e480c7cb" />
 
 ### 2.6 Como resultado a wan tera um endereço ip que pode ser acessado no seu navegador, uma vez lá navegue até a interface LAN
