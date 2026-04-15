@@ -33,6 +33,20 @@ Sistema integrado para gerenciamento seguro de dispositivos IoT em ambientes aca
 | CPU | AMD Ryzen 5 5500X |
 | Memória RAM | 32 GB DDR4 |
 | SO | Ubuntu / Kubuntu 24.04 LTS (bare-metal) |
+
+## Preocupações com Segurança
+
+
+- Não exponha o pfSense diretamente à internet durante os testes. Utilize uma rede isolada ou laboratório virtual.
+- O arquivo `backend/.env` contém credenciais sensíveis (banco de dados, OAuth, chave de API do pfSense). Nunca versione esse arquivo.
+- A chave de API do pfSense gerada durante o setup deve ser tratada como senha. Regenere-a após a avaliação.
+- Os scripts de setup criam um usuário SUPERUSER cujas credenciais são definidas nas variáveis de ambiente — altere-as antes de qualquer uso em produção.
+
+---
+
+---
+
+
 # Instalação  
 
 
