@@ -1,20 +1,42 @@
-﻿
-# Sistema de Registro IoT com Autenticação CAFe e pfSense
 
-## Diagrama de Arquitetura
-![Diagrama de Arquitetura do Sistema](https://github.com/GT-IoTEdu/API/blob/main/diagramas/images/Arquitetura_v1.png)
+# Sistema de Registro IoT com pfSense
 
-*Diagrama completo dos componentes e fluxos do sistema*
+## Objetivo
+Este repositório tem como objetivo armazenar todo o código produzido, exemplificar o funcionamento prático do sistema de orquestração multi-IDS para ambientes IoT, e documentar os procedimentos de instalação, execução e reivindicações do artigo.
 
-## Visão Geral
-Sistema integrado para gerenciamento seguro de dispositivos IoT em ambientes acadêmicos, combinando:
-- ✅ Autenticação federada via CAFe
-- 🔐 Gerenciamento automatizado de regras no pfSense
-- 🤖 Monitoramento inteligente de tráfego com IA
-- 📊 Painel administrativo de dispositivos IoTs cadastrados
+## Resumo do Artigo
+Ambientes IoT ampliam a superfície de ataque e dificultam a resposta a incidentes. O IoT-Edu orquestra múltiplos IDSs (Suricata, Snort, Zeek) em um pipeline unificado com correlação de eventos e bloqueio automatizado. Em cinco tipos de ataque (75 execuções), o sistema alcança contenção média de 5,56 s, com a latência dominada pela fase de detecção. Os resultados expõem um compromisso entre a velocidade dos métodos baseados em assinaturas e o contexto dos baseados em comportamento, demonstrando que a orquestração multi-IDS melhora a resposta automatizada em ambientes IoT dinâmicos.
+
+---
+
+# Estrutura do README.md
+
+Este README.md está organizado nas seguintes seções:
+
+1. **Título, Objetivo e Resumo:** Título do projeto, objetivo do artefato e resumo do artigo.
+2. **Estrutura do README.md:** A presente estrutura.
+3. **Selos considerados:** Lista dos Selos a serem considerados no processo de avaliação.
+4. **Informações básicas:** Descrição dos componentes e requisitos mínimos para a execução do experimento.
+5. **Dependências:** Informação sobre as dependências necessárias.
+6. **Preocupações com segurança:** Lista das considerações e preocupações com a segurança.
+7. **Instalação:** Instruções para instalação e configuração do sistema.
+8. **Teste mínimo:** Instruções para a execução de um teste mínimo.
+9. **Experimentos:** Informações de replicação das reivindicações.
+10. **Licença:** Informações sobre a licença do projeto.
 
 
- 
+
+ ---
+
+## Selos Considerados
+
+Os selos considerados são:
+- Artefatos Disponíveis (SeloD)
+- Artefatos Funcionais (SeloF)
+
+---
+
+---
 # Dependencias
  ### Requisitos de Software
 
