@@ -278,7 +278,9 @@ Historico de bloqueio
 <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/f3a07da1-0e4a-428a-ba48-63916666fabe" />
 E todos os incidentes da rede
 <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/554764ff-9bd3-4ae8-b057-0022408d8331" />
-No momento estão operacionais as IDs do suricata e zeek
+Como adminstrador e possivel cadastras outras instituições 
+<img width="935" height="422" alt="image" src="https://github.com/user-attachments/assets/53585db9-fca9-4314-a3e4-11fcd38ee9cb" />
+E ajustar permissões de usuários conforme demonstrado no teste minimo.
 ## Licença
 
 Copyright (c) 2025 RNP – National Research and Education Network (Brazil)
