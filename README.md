@@ -249,9 +249,9 @@ os campos do zeek e suricata são os mesmo com o url sendo: http://host.docker.i
 <img width="1021" height="691" alt="image" src="https://github.com/user-attachments/assets/ac7691a8-8a59-45ac-b09b-e5388e4dc75b" />
 <img width="1021" height="691" alt="image" src="https://github.com/user-attachments/assets/2d252067-64cd-421f-a7f4-56c7d3e42102" />
 
-### 1.7 utilize uma conta comun para cadastrar os seguintes macs estaticos
+### 1.7 utilize uma conta comun para cadastrar o seguintes macs estatico
 <img width="1021" height="691" alt="image" src="https://github.com/user-attachments/assets/e7ec4695-d54b-4508-b2e2-2674ef3ee3b1" />
-92:d0:c6:0a:29:32 e 92:d0:c6:0a:29:33 escolha o nome e descrição que preferir
+92:d0:c6:0a:29:33 escolha o nome e descrição que preferir
 
 ### 1.8 Instancie os ataque e alvo utilizando o script
  ```bash
@@ -259,6 +259,13 @@ deploy_atacante-alvo.sh
 ```
 
 ### 1.9 Monitore a aba de dispositivos bloqueados e incidentes de segurança
+
+### 2.0 Quando o dispositivo estiver bloqueado, para verificar as conexões 
+ Para conexões externas da rede
+ ```bash
+docker exec -it atacante ping 8.8.8.8
+```
+
 
 ## Licença
 
