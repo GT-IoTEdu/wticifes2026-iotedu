@@ -17,8 +17,7 @@ docker exec -d servidor_alvo ./entrypoint.sh
 
 sleep 10
 # Obter IP
-SERVER_ALVO=$(ip a | grep -A3 -B2 'mtu 1500 qdisc fq_codel state UP' | grep 'inet' | grep -Eo '(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))' | sort | uniq | grep -v '255')
-
+SERVER_ALVO=$( ip a | grep -E -A3 -B2 'scope global dynamic noprefixroute|mtu 1500 qdisc fq_codel state UP' | grep 'inet' | grep -Eo '(((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)))' | sort | uniq | grep -v '255' )
 
 echo "IP do servidor: $SERVER_ALVO"
 

@@ -325,7 +325,7 @@ services:
       MYSQL_USER: IoT_EDU
       MYSQL_PASSWORD: root
     ports:
-      - "3306:3306"
+      - "3307:3307"
   
   backend:
     build: .
