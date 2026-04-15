@@ -26,6 +26,13 @@ Sistema integrado para gerenciamento seguro de dispositivos IoT em ambientes aca
 | Node.js | 18+ |
 | npm / pnpm | qualquer versão recente |
 
+### Requisitos de Hardware (referência dos autores)
+
+| Componente | Especificação |
+|---|---|
+| CPU | AMD Ryzen 5 5500X |
+| Memória RAM | 32 GB DDR4 |
+| SO | Ubuntu / Kubuntu 24.04 LTS (bare-metal) |
 # Instalação  
 
 ## 🔧 Passo 1: Preparar Ambiente
