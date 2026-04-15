@@ -87,7 +87,7 @@ sudo apt install -y \
 
 ```bash
 git clone https://github.com/GT-IoTEdu/wticifes2026-iotedu.git
-cd API_SBRC26_SF
+cd wticifes2026-iotedu
 ```
   
 
