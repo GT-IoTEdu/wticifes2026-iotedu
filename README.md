@@ -203,6 +203,7 @@ Para exportar o arquivo OVA vá em arquivos->importar appliance e selecione o ar
 ### 2.6 Como resultado a wan tera um endereço ip que pode ser acessado no seu navegador, uma vez lá navegue até a interface LAN
 
 <img width="1017" height="626" alt="image" src="https://github.com/user-attachments/assets/9fb26554-1baf-47be-9d56-60eb0d2e1420" />
+O usuário é admin e a senha pfsense
 Gerar a chave de API
 
 1. Vá em **System → REST API → Keys**.
