@@ -105,7 +105,7 @@ source venv/bin/activate
 Antes de iniciar o sistema, é necessário configurar as credenciais OAuth do Google para permitir login na plataforma.
 
 Siga o guia detalhado no arquivo:  
-**[Configuração do Google OAuth - Passo a passo](GOOGLE_AUTH.md)**
+**[Configuração do Google OAuth - Passo a passo](https://github.com/GT-IoTEdu/wticifes2026-iotedu/blob/main/GOOGLE_AUTH.MD)**
 
 ---
 
