@@ -224,8 +224,14 @@ pip  install  -r  requirements.txt
 Para instalar o virtualbox acesse https://www.virtualbox.org/wiki/Downloads e escolha o seu OS.
 
 ### 2.2. Instale a imagem do pfsense
-Este arquivo detalha os passos de instalação do pfsense e alternativamente uma imagem pronta para o virtualbox [Instalacao_PFSense.pdf](https://github.com/user-attachments/files/26728713/Instalacao_PFSense.pdf) 
-[imagem pronta](https://drive.google.com/file/d/1Q9IO_MZtKf6JvTIgJVl-p2nDt5d_ohEj/view?usp=sharing)  
+Este arquivo detalha os passos de instalação do pfsense e alternativamente uma imagem pronta para o virtualbox:
+
+PASSO A PASSO:[Instalacao_PFSense.pdf](https://github.com/user-attachments/files/26728713/Instalacao_PFSense.pdf) 
+
+
+IMAGEM PRONTA:[imagem pronta](https://drive.google.com/file/d/1Q9IO_MZtKf6JvTIgJVl-p2nDt5d_ohEj/view?usp=sharing)  
+
+
 Caso selecione a imagem pronta siga apenas o passo 2.4 e 2.6.
 
 Para exportar o arquivo OVA vá em arquivos->importar appliance e selecione o arquivo OVA.
