@@ -192,7 +192,7 @@ SUPERUSER_ACCESS=seu_email@gmail.com
 retorne a raiz do projeto:
 ```bash
 
-cd   ...
+cd   ..
 
 ```  
 
