@@ -15,8 +15,16 @@ Sistema integrado para gerenciamento seguro de dispositivos IoT em ambientes aca
 
 
  
+# Dependencias
+ ### Requisitos de Software
 
- 
+| Componente | Versão Mínima |
+|---|---|
+| Python | 3.9+ (testado com 3.12) |
+|Docker | 29.2.1|
+| pfSense | 2.8.1 (veja [Passo 2](#3-configuração-do-pfsense)) |
+| Node.js | 18+ |
+| npm / pnpm | qualquer versão recente |
 
 # Instalação  
 
