@@ -279,7 +279,14 @@ docker exec -it atacante ping 8.8.8.8
 tente desbloquear o dispositivo enquanto o comando está rodando
 <img width="539" height="198" alt="image" src="https://github.com/user-attachments/assets/75f31b2c-d866-4e5d-b33a-5c6c629327a8" />
 
-
+## Outras funcionalidades
+Como administrador você pode ver o status da rede,
+<img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/7ad48507-0f2d-48d0-acd9-372a1ec4d9e7" />
+Historico de bloqueio 
+<img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/f3a07da1-0e4a-428a-ba48-63916666fabe" />
+E todos os incidentes da rede
+<img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/554764ff-9bd3-4ae8-b057-0022408d8331" />
+No momento estão operacionais as IDs do suricata e zeek
 ## Licença
 
 Copyright (c) 2025 RNP – National Research and Education Network (Brazil)
