@@ -16,6 +16,8 @@ Acesse [console.cloud.google.com](https://console.cloud.google.com) e faça logi
 ![2](diagramas/images/12.png)
 ![3](diagramas/images/13.png)
 
+> ⚠️ **Atenção:** Confira no canto superior esquerdo o projeto atual.
+
 #### 1.1.3. Configure a Tela de Consentimento OAuth
 * No menu lateral, vá em **"APIs e Serviços" → "Tela de permissão OAuth"**.
 * Preencha os campos obrigatórios:
