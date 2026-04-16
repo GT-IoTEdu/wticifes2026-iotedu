@@ -248,7 +248,10 @@ Máquina Atacante
 ```
 
 ### 1.8 (Admin) Libere/desbloqueie o dispositivo cadastrado
-Se o dispositivo aparecer como bloqueado, acesse a aba **Dispositivos bloqueados** e clique em **Desbloquear/Liberar** para o MAC cadastrado.
+Se o dispositivo aparecer como bloqueado, inclua o filtro **Dispositivos bloqueados** e clique em **Desbloquear/Liberar** para o MAC cadastrado.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed47d4b6-56ca-4468-b443-0064fe5ab64d" />
+
+
 
 ### 1.9 Instancie o atacante e o alvo utilizando o script
 ```bash
@@ -256,6 +259,7 @@ Se o dispositivo aparecer como bloqueado, acesse a aba **Dispositivos bloqueados
 ```
 
 ### 1.10 Monitore a aba de dispositivos bloqueados e incidentes de segurança
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c4d76f62-8c47-4302-b0db-ce0fc1d5c1ec" />
 
 ### 1.11 Verificar bloqueio/desbloqueio via ping (opcional)
 Para testar conexões externas da rede:
