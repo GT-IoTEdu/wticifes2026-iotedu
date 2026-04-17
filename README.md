@@ -149,7 +149,7 @@ python -m pip install -r requirements.txt
 
 ```bash
 # Esse script cria uma interface virtual tap0 que será usada na configuração do pfSense
-./scripts_setup//configurar_rede.sh
+./setup/configurar_rede.sh
 ```
 
 ### 2.1. Instalar o VirtualBox
@@ -180,7 +180,7 @@ Credenciais padrão: usuário `admin` e senha `pfsense`.
 
 ### 3.1 Faça o deploy da rede
 ```bash
-./scripts_setup//deploy.sh
+./setup/deploy.sh
 ```
 
 ### 3.2 Abra outro terminal e execute
@@ -188,8 +188,8 @@ Credenciais padrão: usuário `admin` e senha `pfsense`.
 source venv/bin/activate
 
 
-sudo chown -R "$USER:$USER" logs_snort/
-cd /ids/ids-log-monitor/
+sudo chown -R "$USER:$USER" /ids/logs/logs_snort/
+cd /ids/ids_log_monitor
 uvicorn sse_server:app --host 0.0.0.0 --port 8001 --reload
 ```
 
@@ -254,7 +254,7 @@ Se o dispositivo aparecer como bloqueado, inclua o filtro **Dispositivos bloquea
 
 ### 1.9 Instancie o atacante e o alvo utilizando o script
 ```bash
-./scripts_setup/deploy_atacante-alvo.sh
+./setup/deploy_atacante-alvo.sh
 ```
 
 ### 1.10 Monitore a aba de dispositivos bloqueados e incidentes de segurança
