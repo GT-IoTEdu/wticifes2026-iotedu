@@ -1,4 +1,4 @@
-
+<img width="935" height="613" alt="image" src="https://github.com/user-attachments/assets/d57b6c4a-932a-4b1e-84b6-bbb6cae95eae" />
 # Sistema de Registro IoT com pfSense
 
 ## Objetivo
@@ -281,6 +281,8 @@ Como administrador, você pode:
   <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/f3a07da1-0e4a-428a-ba48-63916666fabe" />
 - Visualizar todos os incidentes da rede:
   <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/554764ff-9bd3-4ae8-b057-0022408d8331" />
+- Bloquear dispositivos manualmente:  
+<img width="935" height="613" alt="image" src="https://github.com/user-attachments/assets/aba6c05e-a36d-4ce5-8602-7d329cee2e00" />
 
   Como superusuário, você pode:
 - Cadastrar outras instituições:
