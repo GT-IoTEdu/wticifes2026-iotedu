@@ -281,11 +281,13 @@ Como administrador, você pode:
   <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/f3a07da1-0e4a-428a-ba48-63916666fabe" />
 - Visualizar todos os incidentes da rede:
   <img width="1015" height="438" alt="image" src="https://github.com/user-attachments/assets/554764ff-9bd3-4ae8-b057-0022408d8331" />
+
+  Como superusuário, você pode:
 - Cadastrar outras instituições:
   <img width="935" height="422" alt="image" src="https://github.com/user-attachments/assets/53585db9-fca9-4314-a3e4-11fcd38ee9cb" />
 
-E ajustar permissões de usuários conforme demonstrado no teste mínimo.
-
+- Ajustar permissões de usuários conforme demonstrado no teste mínimo.
+<img width="1021" height="691" alt="image" src="https://github.com/user-attachments/assets/317800e7-b3c9-4681-a288-5d18bf3bb75d" />
 ## Licença
 
 Copyright (c) 2025 RNP – National Research and Education Network (Brazil)
