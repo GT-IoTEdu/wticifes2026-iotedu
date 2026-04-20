@@ -288,6 +288,8 @@ Como administrador, você pode:
 
 - Ajustar permissões de usuários conforme demonstrado no teste mínimo.
 <img width="1021" height="691" alt="image" src="https://github.com/user-attachments/assets/317800e7-b3c9-4681-a288-5d18bf3bb75d" />
+
+
 ## Licença
 
 Copyright (c) 2025 RNP – National Research and Education Network (Brazil)
