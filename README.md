@@ -1,4 +1,4 @@
-<img width="935" height="613" alt="image" src="https://github.com/user-attachments/assets/d57b6c4a-932a-4b1e-84b6-bbb6cae95eae" />
+ 
 # Sistema de Registro IoT com pfSense
 
 ## Objetivo
