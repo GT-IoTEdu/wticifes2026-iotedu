@@ -47,6 +47,8 @@ Atacante
 
 #Exemplo de descrição
 Máquina Atacante
+#ou use o gerador de mac
+mac_manager.sh generate
 ```
 
 ### 1.8 (Admin) Libere/desbloqueie o dispositivo cadastrado
@@ -57,7 +59,9 @@ Se o dispositivo aparecer como bloqueado, inclua o filtro **Dispositivos bloquea
 
 ### 1.9 Instancie o atacante e o alvo utilizando o script
 ```bash
-./setup/deploy_atacante-alvo.sh
+./setup/deploy_atacante-alvo.sh -d ENDEREÇO MAC UTILIZADO
+
+#Alternativamente existem mais opções de ataques para visualizarlas use o comando -h na execução
 ```
 
 ### 1.10 Monitore a aba de dispositivos bloqueados e incidentes de segurança
