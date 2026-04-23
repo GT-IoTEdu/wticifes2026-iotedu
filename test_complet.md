@@ -57,7 +57,10 @@ Se o dispositivo aparecer como bloqueado, inclua o filtro **Dispositivos bloquea
 
 ### 1.9 Instancie o atacante e o alvo utilizando o script
 ```bash
-./setup/deploy_atacante-alvo.sh
+./setup/deploy_container_attack.sh
+
+# Ou execute os testes a partir do script python
+streamlit run test_interface.py
 ```
 
 ### 1.10 Monitore a aba de dispositivos bloqueados e incidentes de segurança
