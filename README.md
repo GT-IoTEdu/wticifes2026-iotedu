@@ -188,8 +188,8 @@ Credenciais padrão: usuário `admin` e senha `pfsense`.
 source venv/bin/activate
 
 
-sudo chown -R "$USER:$USER" /ids/logs/logs_snort/
-cd /ids/ids_log_monitor
+sudo chown -R "$USER:$USER" ids/logs/logs_snort/
+cd ids/ids_log_monitor
 uvicorn sse_server:app --host 0.0.0.0 --port 8001 --reload
 ```
 
