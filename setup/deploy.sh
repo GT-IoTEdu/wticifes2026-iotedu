@@ -16,14 +16,14 @@ cd "$PARENT_DIR" || exit 1
 cp backend/.env frontend/
 
 # Stop existing containers
-docker-compose down
+docker compose down
 
 
 
 echo "Opening terminal for uvicorn server..."
 
-docker-compose build 
-docker-compose up
+docker compose build 
+docker compose up
 
 
 
